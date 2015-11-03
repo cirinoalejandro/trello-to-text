@@ -1,3 +1,15 @@
+# trello2text
+
+
+[![Fury](https://badge.fury.io/py/trello2text.png)](http://badge.fury.io/py/trello2text)
+
+
+[![travis.ci](https://travis-ci.org/cirinoalejando/trello2text.png?branch=master)](https://travis-ci.org/cirinoalejando/trello2text)
+
+
+[![pypy](https://pypip.in/d/trello2text/badge.png)](https://crate.io/packages/trello2text?version=latest)
+
+
 # Trello Board List Output to Text
 for now outputs to console in a  format suitable for MoinMoin Wiki
 
@@ -39,18 +51,18 @@ https://api.trello.com/1/boards/5373c7094676b4be1ba5032b/lists?cards=open&card_f
   
   add ".json" to the url of the board, like https://trello.com/b/xcDievul/temas-a-tratar-en-reuniones.json
 
-4. replace APP_KEY, TOKEN, BOARD, list_name in the file script.py
+4. replace APP_KEY, TOKEN, in the file trello2text.py
 
 5. execute script, with:
   ```
-  PYTHONIOENCODING=UTF-8 python -W ignore script.py > out.moin
+    Usage:
+        trello2text [write <filename>| output] [--template=<template_name>] --board=<board_id> --list=<list_name>
+        trello2text -h | --help
+        trello2text --version
   ```
   
   
 ## TO DO:
-1. Make into python package
-2. Accept command line parameters
-3. Set utf-8 as default output encoding
-4. Modularize, add tests
-5. Have working version for assembly meetings, write to file for MoinMoin Wiki
-6. Future: turn into generic trello serializer with more options, output string templates
+1. Modularize, add tests
+2. Have working version for assembly meetings, write to file for MoinMoin Wiki
+3. Future: turn into generic trello serializer with more options, output string templates
