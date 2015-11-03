@@ -27,27 +27,30 @@ https://api.trello.com/1/boards/5373c7094676b4be1ba5032b/lists?cards=open&card_f
 
 ## Usage:
 
-00. clone the repo :)
+00. Clone the repo :)
 
-0. install requirements
+0. Install it
   ```
-  cd trello-to-text
-  pip install -r requirements.txt
+  python setup.py install
+  ```
+  if you are going to hack it
+
+  ```
+  python setup.py develop
+  pip install -r dev-requirements.txt
   ```
 
-1. get app key
+
+1. Get app key (You will need it on the next step)
   https://developers.trello.com/get-started
 
-2. get token:
+2. Get token:
   ```
-  python
-  from trello import TrelloApi
-  trello = TrelloApi(APP_KEY)
-  trello.get_token_url('NombreApp', expires='never', write_access=True)
+   trello2text get-app-token <YOURAPPKEY>
   ```
-  copy and paste url to browser, authorize app
+  copy and paste url to browser, to authorize the app
 
-3. get board id:
+3. get board id (You'll need it later to pass it on the cli):
   
   add ".json" to the url of the board, like https://trello.com/b/xcDievul/temas-a-tratar-en-reuniones.json
 
@@ -63,6 +66,6 @@ https://api.trello.com/1/boards/5373c7094676b4be1ba5032b/lists?cards=open&card_f
   
   
 ## TO DO:
-1. Modularize, add tests
+1. Add some tests
 2. Have working version for assembly meetings, write to file for MoinMoin Wiki
 3. Future: turn into generic trello serializer with more options, output string templates

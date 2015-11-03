@@ -4,6 +4,7 @@
 
 Usage:
   trello2text [write <filename>| output] [--template=<template_name>] --board=<board_id> --list=<list_name>
+  trello2text get-app-token <app_key>
   trello2text -h | --help
   trello2text --version
 
@@ -77,23 +78,34 @@ class TrelloParser(object):
         return text
 
 
+def get_trello_app_token(app_key):
+    trello = TrelloApi(APP_KEY)
+    print (trello.get_token_url('Trello2Text', expires='never', write_access=True))
+    print ("Now got to the url above and authorize the app")
+
+
 def main():
     """Main entry point for the trello2text CLI."""
     args = docopt(__doc__, version=__version__)
     write = args.get('write')
+    get_app_token = args.get('get-app-token')
     output = args.get('output')
     filename = args.get('<filename>')
     board_id = args.get('--board')
     list_name = args.get('--list')
+    app_key = args.get('<app_key>')
 
-    trello_parser = TrelloParser(APP_KEY, TOKEN, board_id)
-    text = trello_parser.parse_cards(list_name)
+    if not get_app_token:
+        trello_parser = TrelloParser(APP_KEY, TOKEN, board_id)
+        text = trello_parser.parse_cards(list_name)
 
     if write:
         with io.open(filename, 'w') as fp:
             fp.write(text)
     elif output:
         print(text)
+    elif get_app_token:
+        get_trello_app_token(app_key)
 
 if __name__ == '__main__':
     main()
