@@ -1,5 +1,5 @@
 # Trello Board List Output to Text
-for now outputs to console ina  format suitable for MoinMoin Wiki
+for now outputs to console in a  format suitable for MoinMoin Wiki
 
 ## Useful links:
 
