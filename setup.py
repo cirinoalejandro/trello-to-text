@@ -52,9 +52,9 @@ def read(fname):
 
 setup(
     name='trello2text',
-    version="0.1.0",
+    version="0.1.1",
     description='Parses trello board and outputs text',
-    long_description=read("README.rst"),
+    long_description=read("README.md"),
     author='Alejandro Cirino',
     author_email='alejandro.cirino@devecoop.com',
     url='https://github.com/cirinoalejando/trello2text',
@@ -74,7 +74,7 @@ setup(
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy'
     ],
-    py_modules=["trello2text"],
+    py_modules=["trello2text", ".utils"],
     entry_points={
         'console_scripts': [
             "trello2text = trello2text:main"
