@@ -16,29 +16,29 @@ https://api.trello.com/1/boards/5373c7094676b4be1ba5032b/lists?cards=open&card_f
 ## Usage:
 
 0. install requirements
-```
-pip install requirements.txt
-```
+  ```
+  pip install requirements.txt
+  ```
 
 1. get app key
-https://developers.trello.com/get-started
+  https://developers.trello.com/get-started
 
 2. get token:
-```
-python
-from trello import TrelloApi
-TrelloApi(APP_KEY)
-trello.get_token_url('NombreApp', expires='never', write_access=True)
-```
-copy and paste url to browser, authorize app
+  ```
+  python
+  from trello import TrelloApi
+  TrelloApi(APP_KEY)
+  trello.get_token_url('NombreApp', expires='never', write_access=True)
+  ```
+  copy and paste url to browser, authorize app
 
 3. get board id:
-
-add ".json" to the url of the board, like https://trello.com/b/xcDievul/temas-a-tratar-en-reuniones.json
+  
+  add ".json" to the url of the board, like https://trello.com/b/xcDievul/temas-a-tratar-en-reuniones.json
 
 4. replace APP_KEY, TOKEN, BOARD, list_name in script
 
 5. execute script, with:
-```
-PYTHONIOENCODING=UTF-8 python -W ignore script.py > out.moin
-```
+  ```
+  PYTHONIOENCODING=UTF-8 python -W ignore script.py > out.moin
+  ```
