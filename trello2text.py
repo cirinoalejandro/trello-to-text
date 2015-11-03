@@ -97,22 +97,23 @@ def get_config():
 
 def main():
     """Main entry point for the trello2text CLI."""
-    try:
-        config = get_config()
-        app_key = config.get("main", "app_key")
-        token = config.get("main", "token")
-    except Exception as err:
-        sys.exit("Error on config file: {}".format(err))
-
     args = docopt(__doc__, version=__version__)
     write = args.get('write')
     get_app_token = args.get('get-app-token')
+    app_key_to_get_token = args.get('<app_key>')
     output = args.get('output')
     filename = args.get('<filename>')
     board_id = args.get('--board')
     list_name = args.get('--list')
 
     if not get_app_token:
+        try:
+            config = get_config()
+            app_key = config.get("main", "app_key")
+            token = config.get("main", "token")
+        except Exception as err:
+            sys.exit("Error on config file: {}".format(err))
+
         trello_parser = TrelloParser(app_key, token, board_id)
         text = trello_parser.parse_cards(list_name)
 
@@ -122,7 +123,7 @@ def main():
     elif output:
         print(text)
     elif get_app_token:
-        get_trello_app_token(app_key)
+        get_trello_app_token(app_key_to_get_token)
 
 if __name__ == '__main__':
     main()
