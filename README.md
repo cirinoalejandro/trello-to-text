@@ -1,3 +1,17 @@
+# trello2text
+
+
+[![Fury](https://badge.fury.io/py/trello2text.png)](http://badge.fury.io/py/trello2text
+)
+
+
+[![travis.ci](https://travis-ci.org/cirinoalejando/trello2text.png?branch=master)](https://travis-ci.org/cirinoalejando/trello2text)
+
+
+[![pypy](https://pypip.in/d/trello2text/badge.png)](https://crate.io/packages/trello2text?version=latest
+)
+
+
 # Trello Board List Output to Text
 for now outputs to console in a  format suitable for MoinMoin Wiki
 
