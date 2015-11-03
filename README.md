@@ -54,7 +54,12 @@ https://api.trello.com/1/boards/5373c7094676b4be1ba5032b/lists?cards=open&card_f
   
   add ".json" to the url of the board, like https://trello.com/b/xcDievul/temas-a-tratar-en-reuniones.json
 
-4. replace APP_KEY, TOKEN, in the file trello2text.py
+4. Create a ~/.config/trello2text/tello2textrc file with the following content (replaced with your APP_KEY and TOKEN)
+  ```
+  [main]
+  app_key = YOURAPPKEY 
+  token =  OBTAINEDTOKEN
+  ```
 
 5. execute script, with:
   ```

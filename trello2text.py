@@ -17,16 +17,17 @@ Options:
 from __future__ import unicode_literals, print_function
 
 import io
+import os
+import sys
+from ConfigParser import SafeConfigParser
 
 from docopt import docopt
 from trello import TrelloApi
 
+
 __version__ = "0.1.0"
 __author__ = "Alejandro Cirino"
 __license__ = "MIT"
-
-APP_KEY = "FILL API KEY"
-TOKEN = "FILL TOKEN"
 
 
 class TrelloParser(object):
@@ -79,13 +80,30 @@ class TrelloParser(object):
 
 
 def get_trello_app_token(app_key):
-    trello = TrelloApi(APP_KEY)
+    trello = TrelloApi(app_key)
     print (trello.get_token_url('Trello2Text', expires='never', write_access=True))
     print ("Now got to the url above and authorize the app")
 
 
+def get_config():
+    user_home = os.path.expanduser("~")
+    config_file_path = os.path.join(user_home, '.config', 'trello2text', 'trello2textrc')
+
+    config = SafeConfigParser()
+    config.read(config_file_path)
+
+    return config
+
+
 def main():
     """Main entry point for the trello2text CLI."""
+    try:
+        config = get_config()
+        app_key = config.get("main", "app_key")
+        token = config.get("main", "token")
+    except Exception as err:
+        sys.exit("Error on config file: {}".format(err))
+
     args = docopt(__doc__, version=__version__)
     write = args.get('write')
     get_app_token = args.get('get-app-token')
@@ -93,10 +111,9 @@ def main():
     filename = args.get('<filename>')
     board_id = args.get('--board')
     list_name = args.get('--list')
-    app_key = args.get('<app_key>')
 
     if not get_app_token:
-        trello_parser = TrelloParser(APP_KEY, TOKEN, board_id)
+        trello_parser = TrelloParser(app_key, token, board_id)
         text = trello_parser.parse_cards(list_name)
 
     if write:
