@@ -26,7 +26,6 @@ __license__ = "MIT"
 
 APP_KEY = "FILL API KEY"
 TOKEN = "FILL TOKEN"
-BOARD = "FILL BOARD ID"
 
 
 class TrelloParser(object):
