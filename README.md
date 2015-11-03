@@ -30,7 +30,7 @@ https://api.trello.com/1/boards/5373c7094676b4be1ba5032b/lists?cards=open&card_f
   ```
   python
   from trello import TrelloApi
-  TrelloApi(APP_KEY)
+  trello = TrelloApi(APP_KEY)
   trello.get_token_url('NombreApp', expires='never', write_access=True)
   ```
   copy and paste url to browser, authorize app
