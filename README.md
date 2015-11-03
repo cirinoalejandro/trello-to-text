@@ -40,7 +40,6 @@ https://api.trello.com/1/boards/5373c7094676b4be1ba5032b/lists?cards=open&card_f
   pip install -r dev-requirements.txt
   ```
 
-
 1. Get app key (You will need it on the next step)
   https://developers.trello.com/get-started
 
@@ -50,16 +49,17 @@ https://api.trello.com/1/boards/5373c7094676b4be1ba5032b/lists?cards=open&card_f
   ```
   copy and paste url to browser, to authorize the app
 
-3. get board id (You'll need it later to pass it on the cli):
-  
-  add ".json" to the url of the board, like https://trello.com/b/xcDievul/temas-a-tratar-en-reuniones.json
-
-4. Create a ~/.config/trello2text/tello2textrc file with the following content (replaced with your APP_KEY and TOKEN)
+3. Create a ~/.config/trello2text/tello2textrc file with the following content (replaced with your APP_KEY and TOKEN)
   ```
   [main]
   app_key = YOURAPPKEY 
   token =  OBTAINEDTOKEN
   ```
+
+4. get board id (You'll need it later to pass it on the cli):
+  
+  add ".json" to the url of the board, like https://trello.com/b/xcDievul/temas-a-tratar-en-reuniones.json
+
 
 5. execute script, with:
   ```
