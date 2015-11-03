@@ -52,5 +52,5 @@ https://api.trello.com/1/boards/5373c7094676b4be1ba5032b/lists?cards=open&card_f
 2. Accept command line parameters
 3. Set utf-8 as default output encoding
 4. Modularize, add tests
-5. Have working version for assembly meetings
+5. Have working version for assembly meetings, write to file for MoinMoin Wiki
 6. Future: turn into generic trello serializer with more options, output string templates
