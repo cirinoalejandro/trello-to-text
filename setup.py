@@ -13,6 +13,7 @@ REQUIRES = [
     'wsgiref==0.1.2',
 ]
 
+
 class PyTest(TestCommand):
     def finalize_options(self):
         TestCommand.finalize_options(self)
