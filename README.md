@@ -15,9 +15,12 @@ https://api.trello.com/1/boards/5373c7094676b4be1ba5032b/lists?cards=open&card_f
 
 ## Usage:
 
+00. clone the repo :)
+
 0. install requirements
   ```
-  pip install requirements.txt
+  cd trello-to-text
+  pip install -r requirements.txt
   ```
 
 1. get app key
